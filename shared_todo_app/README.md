@@ -1,16 +1,26 @@
-# shared_todo_app
+# Simple Todo App using Firebase
 
-A new Flutter project.
+The todo app connects to firebase cloud firestore and authentication. It uses a provider for state management
 
-## Getting Started
+## Folder Structure
+```
+lib
+├───api
+│   └───firebase_auth_api.dart*
+│   └───firebase_todo_api.dart
+├───models
+│   └───todo_model.dart
+├───providers
+│   └───todo_provider.dart
+│   └───auth_provider.dart*
+├───screens
+│   ├───modal_todo.dart
+│   └───todo_page.dart
+│   └───login.dart*
+│   └───signup.dart*
+└───main.dart
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Models - contains the data model used
+* Providers - contains the Todo provider that contains the data and method logic
+* Screens - contains the screen/widgets used

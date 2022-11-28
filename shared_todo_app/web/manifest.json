@@ -1,6 +1,6 @@
 {
-    "name": "shared_todo_app",
-    "short_name": "shared_todo_app",
+    "name": "week7_networking_discussion",
+    "short_name": "week7_networking_discussion",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

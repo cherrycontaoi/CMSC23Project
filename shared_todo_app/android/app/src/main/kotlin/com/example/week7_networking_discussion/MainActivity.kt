@@ -1,4 +1,4 @@
-package com.example.shared_todo_app
+package com.example.week7_networking_discussion
 
 import io.flutter.embedding.android.FlutterActivity
 
