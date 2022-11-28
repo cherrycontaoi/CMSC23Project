@@ -35,6 +35,12 @@ class _TodoPageState extends State<TodoPage> {
             Navigator.pop(context);
           },
         ),
+        ListTile(
+            title: const Text('Profile'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/profile');
+            }),
       ])),
       appBar: AppBar(
         title: Text("Todo"),

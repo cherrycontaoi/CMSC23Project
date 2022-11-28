@@ -11,6 +11,7 @@ import 'package:week7_networking_discussion/screens/todo_page.dart';
 import 'package:week7_networking_discussion/screens/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:week7_networking_discussion/screens/user_profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +39,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SimpleTodo',
       initialRoute: '/',
-      routes: {'/': (context) => const AuthWrapper()},
+      routes: {
+        '/': (context) => const AuthWrapper(),
+        '/profile': (context) => const UserProfile(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
