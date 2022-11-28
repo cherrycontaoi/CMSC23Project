@@ -5,8 +5,8 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:week7_networking_discussion/api/firebase_todo_api.dart';
-import 'package:week7_networking_discussion/models/todo_model.dart';
+import 'package:todo_app/api/firebase_todo_api.dart';
+import 'package:todo_app/models/todo_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TodoListProvider with ChangeNotifier {

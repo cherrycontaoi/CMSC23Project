@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:week7_networking_discussion/providers/auth_provider.dart';
+import 'package:todo_app/providers/auth_provider.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:week7_networking_discussion/providers/auth_provider.dart';
-import 'package:week7_networking_discussion/screens/signup.dart';
+import 'package:todo_app/providers/auth_provider.dart';
+import 'package:todo_app/screens/signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../providers/auth_provider.dart';
 
 // may button
-class UserProfile extends StatelessWidget {
-  const UserProfile({super.key});
+class Friends extends StatelessWidget {
+  const Friends({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +52,9 @@ class UserProfile extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text('My Profile'),
+        title: const Text('Friends'),
       ),
-      body: Column(children: [Text("\nThis is the My Profile page.")]),
+      body: Column(children: [Text("\nThis is the Friends page")]),
     );
   }
 }

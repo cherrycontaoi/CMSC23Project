@@ -1,15 +1,9 @@
-/*
-  Created by: Claizel Coubeili Cepe
-  Date: 27 October 2022
-  Description: Sample todo app with networking
-*/
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:week7_networking_discussion/models/todo_model.dart';
-import 'package:week7_networking_discussion/providers/todo_provider.dart';
-import 'package:week7_networking_discussion/providers/auth_provider.dart';
-import 'package:week7_networking_discussion/screens/modal_todo.dart';
+import 'package:todo_app/models/todo_model.dart';
+import 'package:todo_app/providers/todo_provider.dart';
+import 'package:todo_app/providers/auth_provider.dart';
+import 'package:todo_app/screens/modal_todo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TodoPage extends StatefulWidget {
@@ -28,12 +22,14 @@ class _TodoPageState extends State<TodoPage> {
     return Scaffold(
       drawer: Drawer(
           child: ListView(padding: EdgeInsets.zero, children: [
-        ListTile(
-          title: const Text('Logout'),
-          onTap: () {
-            context.read<AuthProvider>().signOut();
-            Navigator.pop(context);
-          },
+        const SizedBox(
+          height: 80.0,
+          child: DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Text('Menu'),
+          ),
         ),
         ListTile(
             title: const Text('Profile'),
@@ -41,6 +37,25 @@ class _TodoPageState extends State<TodoPage> {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/profile');
             }),
+        ListTile(
+            title: const Text('Todo Page'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/');
+            }),
+        ListTile(
+            title: const Text('Friends'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/friends');
+            }),
+        ListTile(
+          title: const Text('Logout'),
+          onTap: () {
+            context.read<AuthProvider>().signOut();
+            Navigator.pop(context);
+          },
+        ),
       ])),
       appBar: AppBar(
         title: Text("Todo"),
