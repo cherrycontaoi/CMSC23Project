@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../providers/auth_provider.dart';
 
-// may button
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
 
@@ -12,14 +11,13 @@ class UserProfile extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(
         child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero, //remove padding
+          padding: EdgeInsets.zero,
           children: [
             const SizedBox(
               height: 80.0,
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.red,
                 ),
                 child: Text('Menu'),
               ),

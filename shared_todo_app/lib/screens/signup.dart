@@ -13,6 +13,8 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController firstNameController = TextEditingController();
+    TextEditingController lastNameController = TextEditingController();
 
     final email = TextField(
       controller: emailController,
@@ -29,14 +31,30 @@ class _SignupPageState extends State<SignupPage> {
       ),
     );
 
+    final firstName = TextField(
+      controller: firstNameController,
+      decoration: const InputDecoration(
+        hintText: "First Name",
+      ),
+    );
+
+    final lastName = TextField(
+      controller: lastNameController,
+      decoration: const InputDecoration(
+        hintText: "Last Name",
+      ),
+    );
+
     final SignupButton = Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: ElevatedButton(
         onPressed: () {
           //call the auth provider here
-          context
-              .read<AuthProvider>()
-              .signUp(emailController.text, passwordController.text);
+          context.read<AuthProvider>().signUp(
+              emailController.text,
+              passwordController.text,
+              firstNameController.text,
+              lastNameController.text);
           Navigator.pop(context);
         },
         child: const Text('Sign up', style: TextStyle(color: Colors.white)),
@@ -60,13 +78,20 @@ class _SignupPageState extends State<SignupPage> {
           shrinkWrap: true,
           padding: const EdgeInsets.only(left: 40.0, right: 40.0),
           children: <Widget>[
+            Image.asset(
+              'images/appLogo1.png',
+              width: 600,
+              fit: BoxFit.cover,
+            ),
             const Text(
-              "Sign Up",
+              "Create a new account",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             email,
             password,
+            firstName,
+            lastName,
             SignupButton,
             backButton
           ],

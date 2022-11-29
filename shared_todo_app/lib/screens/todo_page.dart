@@ -16,7 +16,6 @@ class TodoPage extends StatefulWidget {
 class _TodoPageState extends State<TodoPage> {
   @override
   Widget build(BuildContext context) {
-    // access the list of todos in the provider
     Stream<QuerySnapshot> todosStream = context.watch<TodoListProvider>().todos;
 
     return Scaffold(
@@ -26,7 +25,7 @@ class _TodoPageState extends State<TodoPage> {
           height: 80.0,
           child: DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.red,
             ),
             child: Text('Menu'),
           ),

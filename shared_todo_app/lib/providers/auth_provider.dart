@@ -5,6 +5,7 @@ import 'package:todo_app/api/firebase_auth_api.dart';
 class AuthProvider with ChangeNotifier {
   late FirebaseAuthAPI authService;
   User? userObj;
+
   AuthProvider() {
     authService = FirebaseAuthAPI();
     authService.getUser().listen((User? newUser) {
@@ -16,7 +17,9 @@ class AuthProvider with ChangeNotifier {
       print('AuthProvider - FirebaseAuth - onAuthStateChanged - $e');
     });
   }
+
   User? get user => userObj;
+
   bool get isAuthenticated {
     return user != null;
   }
@@ -29,7 +32,8 @@ class AuthProvider with ChangeNotifier {
     authService.signOut();
   }
 
-  void signUp(String email, String password) {
-    authService.signUp(email, password);
+  void signUp(
+      String email, String password, String firstName, String lastName) {
+    authService.signUp(email, password, firstName, lastName);
   }
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
-// may button
 class Friends extends StatelessWidget {
   const Friends({super.key});
 
@@ -11,14 +10,13 @@ class Friends extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(
         child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero, //remove padding
+          padding: EdgeInsets.zero,
           children: [
             const SizedBox(
               height: 80.0,
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.red,
                 ),
                 child: Text('Menu'),
               ),

@@ -1,9 +1,3 @@
-/*
-  Created by: Claizel Coubeili Cepe
-  Date: 27 October 2022
-  Description: Sample todo app with networking
-*/
-
 import 'package:flutter/material.dart';
 import 'package:todo_app/api/firebase_todo_api.dart';
 import 'package:todo_app/models/todo_model.dart';
@@ -19,7 +13,6 @@ class TodoListProvider with ChangeNotifier {
     fetchTodos();
   }
 
-  // getter
   Stream<QuerySnapshot> get todos => _todosStream;
   Todo get selected => _selectedTodo!;
 
@@ -39,7 +32,6 @@ class TodoListProvider with ChangeNotifier {
   }
 
   void editTodo(int index, String newTitle) {
-    // _todoList[index].title = newTitle;
     print("Edit");
     notifyListeners();
   }
@@ -51,7 +43,6 @@ class TodoListProvider with ChangeNotifier {
   }
 
   void toggleStatus(int index, bool status) {
-    // _todoList[index].completed = status;
     print("Toggle Status");
     notifyListeners();
   }

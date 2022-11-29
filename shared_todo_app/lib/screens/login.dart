@@ -67,10 +67,15 @@ class _LoginPageState extends State<LoginPage> {
           shrinkWrap: true,
           padding: const EdgeInsets.only(left: 40.0, right: 40.0),
           children: <Widget>[
+            Image.asset(
+              'images/appLogo1.png',
+              width: 600,
+              fit: BoxFit.cover,
+            ),
             const Text(
               "Login",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             email,
             password,
