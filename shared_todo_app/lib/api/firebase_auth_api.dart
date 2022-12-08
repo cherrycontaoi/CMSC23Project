@@ -9,9 +9,13 @@ class FirebaseAuthAPI {
     return auth.authStateChanges();
   }
 
-  void saveUserToFirestore(String? uid, String email) async {
+  void saveUserToFirestore(
+      String? uid, String email, String firstName, String lastName) async {
     try {
-      await db.collection("users").doc(uid).set({"email": email});
+      await db
+          .collection("users")
+          .doc(uid)
+          .set({"email": email, "firstName": firstName, "lastName": lastName});
     } on FirebaseException catch (e) {
       print(e.message);
     }
@@ -40,7 +44,7 @@ class FirebaseAuthAPI {
         password: password,
       );
       if (credential.user != null) {
-        saveUserToFirestore(credential.user?.uid, email);
+        saveUserToFirestore(credential.user?.uid, email, firstName, lastName);
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

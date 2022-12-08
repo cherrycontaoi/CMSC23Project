@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCAFDoSyASP5zrhs1L1jJkasIn6z9nCmHI',
-    appId: '1:593268085808:web:7ed4a80c7421f4fc7649f5',
-    messagingSenderId: '593268085808',
-    projectId: 'cmsc23-todo-app-cbcontaoi',
-    authDomain: 'cmsc23-todo-app-cbcontaoi.firebaseapp.com',
-    storageBucket: 'cmsc23-todo-app-cbcontaoi.appspot.com',
-    measurementId: 'G-V876TV0WEH',
+    apiKey: 'AIzaSyAcXb0CMkKHboiDMD4wmz3nNTq6RzPjAxE',
+    appId: '1:850221367044:web:5b0ddb5f9d5d8ef6c85a51',
+    messagingSenderId: '850221367044',
+    projectId: 'cmsc23-project-contaoi',
+    authDomain: 'cmsc23-project-contaoi.firebaseapp.com',
+    storageBucket: 'cmsc23-project-contaoi.appspot.com',
+    measurementId: 'G-F4G525VDGX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBvnP2H6MDxo5kWS6959flCtDp3nTFj2XU',
-    appId: '1:593268085808:android:34221718fcc4bd4d7649f5',
-    messagingSenderId: '593268085808',
-    projectId: 'cmsc23-todo-app-cbcontaoi',
-    storageBucket: 'cmsc23-todo-app-cbcontaoi.appspot.com',
+    apiKey: 'AIzaSyCQGugOBm6IVl9RjzjXK565vIwdeQSe1kA',
+    appId: '1:850221367044:android:6d5f9156cb152e83c85a51',
+    messagingSenderId: '850221367044',
+    projectId: 'cmsc23-project-contaoi',
+    storageBucket: 'cmsc23-project-contaoi.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAv7_42yV4OHD9ym3ESqJrUv_2vL6sxVbI',
-    appId: '1:593268085808:ios:1680291fe2114cf07649f5',
-    messagingSenderId: '593268085808',
-    projectId: 'cmsc23-todo-app-cbcontaoi',
-    storageBucket: 'cmsc23-todo-app-cbcontaoi.appspot.com',
-    iosClientId: '593268085808-8fjl7f687sciupgr2uphgnfn9thied20.apps.googleusercontent.com',
-    iosBundleId: 'com.example.week7NetworkingDiscussion',
+    apiKey: 'AIzaSyCPaGbkEHCYOnO9TiTEktRtrX2B_-m8_a4',
+    appId: '1:850221367044:ios:edd304c4e70cf901c85a51',
+    messagingSenderId: '850221367044',
+    projectId: 'cmsc23-project-contaoi',
+    storageBucket: 'cmsc23-project-contaoi.appspot.com',
+    iosClientId: '850221367044-gsacjanap0hliv0mdjb3kjtkh5qlsm3j.apps.googleusercontent.com',
+    iosBundleId: 'com.onatcipli.networkUpp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAv7_42yV4OHD9ym3ESqJrUv_2vL6sxVbI',
-    appId: '1:593268085808:ios:1680291fe2114cf07649f5',
-    messagingSenderId: '593268085808',
-    projectId: 'cmsc23-todo-app-cbcontaoi',
-    storageBucket: 'cmsc23-todo-app-cbcontaoi.appspot.com',
-    iosClientId: '593268085808-8fjl7f687sciupgr2uphgnfn9thied20.apps.googleusercontent.com',
-    iosBundleId: 'com.example.week7NetworkingDiscussion',
+    apiKey: 'AIzaSyCPaGbkEHCYOnO9TiTEktRtrX2B_-m8_a4',
+    appId: '1:850221367044:ios:edd304c4e70cf901c85a51',
+    messagingSenderId: '850221367044',
+    projectId: 'cmsc23-project-contaoi',
+    storageBucket: 'cmsc23-project-contaoi.appspot.com',
+    iosClientId: '850221367044-gsacjanap0hliv0mdjb3kjtkh5qlsm3j.apps.googleusercontent.com',
+    iosBundleId: 'com.onatcipli.networkUpp',
   );
 }

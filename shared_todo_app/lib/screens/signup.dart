@@ -78,15 +78,10 @@ class _SignupPageState extends State<SignupPage> {
           shrinkWrap: true,
           padding: const EdgeInsets.only(left: 40.0, right: 40.0),
           children: <Widget>[
-            Image.asset(
-              'images/appLogo1.png',
-              width: 600,
-              fit: BoxFit.cover,
-            ),
             const Text(
-              "Create a new account",
+              "Sign Up",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 25),
             ),
             email,
             password,
