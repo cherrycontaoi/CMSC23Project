@@ -19,6 +19,8 @@ class AuthProvider with ChangeNotifier {
   }
 
   User? get user => userObj;
+  // for registering the username in email form
+  String emailTag = "@email.com";
 
   bool get isAuthenticated {
     return user != null;
@@ -33,7 +35,7 @@ class AuthProvider with ChangeNotifier {
   }
 
   void signUp(
-      String email, String password, String firstName, String lastName) {
-    authService.signUp(email, password, firstName, lastName);
+      String username, String password, String firstName, String lastName) {
+    authService.signUp(username + emailTag, password, firstName, lastName);
   }
 }

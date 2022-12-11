@@ -13,6 +13,7 @@ class TodoListProvider with ChangeNotifier {
     fetchTodos();
   }
 
+  // getter
   Stream<QuerySnapshot> get todos => _todosStream;
   Todo get selected => _selectedTodo!;
 
@@ -31,8 +32,10 @@ class TodoListProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void editTodo(int index, String newTitle) {
-    print("Edit");
+  void editTodo(String newString) async {
+    String message =
+        await firebaseService.editTodo(_selectedTodo!.id, newString);
+    print(message);
     notifyListeners();
   }
 
@@ -42,8 +45,10 @@ class TodoListProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleStatus(int index, bool status) {
-    print("Toggle Status");
+  void toggleStatus(bool status) async {
+    String message =
+        await firebaseService.toggleStatus(_selectedTodo!.id, status);
+    print(message);
     notifyListeners();
   }
 }

@@ -59,14 +59,16 @@ class TodoModal extends StatelessWidget {
               Navigator.of(context).pop();
               break;
             }
-          // case 'Edit':
-          //   {
-          //     context
-          //         .read<TodoListProvider>()
-          //         .editTodo(todoIndex, _formFieldController.text);
-          //     Navigator.of(context).pop();
-          //     break;
-          //   }
+          case 'Edit':
+            {
+              context
+                  .read<TodoListProvider>()
+                  .editTodo(_formFieldController.text);
+
+              // Remove dialog after editing
+              Navigator.of(context).pop();
+              break;
+            }
           case 'Delete':
             {
               context.read<TodoListProvider>().deleteTodo();

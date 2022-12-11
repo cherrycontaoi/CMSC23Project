@@ -12,14 +12,15 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
+    TextEditingController usernameController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    String emailTag = "@email.com";
 
-    final email = TextField(
+    final username = TextField(
       key: const Key('emailField'),
-      controller: emailController,
+      controller: usernameController,
       decoration: const InputDecoration(
-        hintText: "Email",
+        hintText: "Username",
       ),
     );
 
@@ -37,9 +38,8 @@ class _LoginPageState extends State<LoginPage> {
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: ElevatedButton(
         onPressed: () {
-          context
-              .read<AuthProvider>()
-              .signIn(emailController.text, passwordController.text);
+          context.read<AuthProvider>().signIn(
+              usernameController.text + emailTag, passwordController.text);
         },
         child: const Text('Log In', style: TextStyle(color: Colors.white)),
       ),
@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            email,
+            username,
             password,
             loginButton,
             signUpButton,

@@ -11,19 +11,19 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    TextEditingController usernameController = TextEditingController();
     TextEditingController firstNameController = TextEditingController();
     TextEditingController lastNameController = TextEditingController();
 
-    final email = TextField(
-      controller: emailController,
+    final username = TextFormField(
+      controller: usernameController,
       decoration: const InputDecoration(
-        hintText: "Email",
+        hintText: "Username",
       ),
     );
 
-    final password = TextField(
+    final password = TextFormField(
       controller: passwordController,
       obscureText: true,
       decoration: const InputDecoration(
@@ -31,14 +31,14 @@ class _SignupPageState extends State<SignupPage> {
       ),
     );
 
-    final firstName = TextField(
+    final firstName = TextFormField(
       controller: firstNameController,
       decoration: const InputDecoration(
         hintText: "First Name",
       ),
     );
 
-    final lastName = TextField(
+    final lastName = TextFormField(
       controller: lastNameController,
       decoration: const InputDecoration(
         hintText: "Last Name",
@@ -51,7 +51,7 @@ class _SignupPageState extends State<SignupPage> {
         onPressed: () {
           //call the auth provider here
           context.read<AuthProvider>().signUp(
-              emailController.text,
+              usernameController.text,
               passwordController.text,
               firstNameController.text,
               lastNameController.text);
@@ -78,12 +78,17 @@ class _SignupPageState extends State<SignupPage> {
           shrinkWrap: true,
           padding: const EdgeInsets.only(left: 40.0, right: 40.0),
           children: <Widget>[
+            Image.asset(
+              'images/appLogo1.png',
+              width: 600,
+              fit: BoxFit.cover,
+            ),
             const Text(
               "Sign Up",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 25),
             ),
-            email,
+            username,
             password,
             firstName,
             lastName,
