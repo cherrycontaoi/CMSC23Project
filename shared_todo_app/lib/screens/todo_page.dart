@@ -14,6 +14,9 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  int _selectedIndex = 1;
+  final ScrollController _pageController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     Stream<QuerySnapshot> todosStream = context.watch<TodoListProvider>().todos;
@@ -25,7 +28,7 @@ class _TodoPageState extends State<TodoPage> {
           height: 80.0,
           child: DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: Color.fromARGB(255, 61, 117, 160),
             ),
             child: Text('Menu'),
           ),
@@ -152,6 +155,37 @@ class _TodoPageState extends State<TodoPage> {
           );
         },
         child: const Icon(Icons.add_outlined),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.group), label: "Friends"),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              //only scroll to top when current index is selected
+
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/profile');
+              break;
+            case 1:
+              if (_selectedIndex == index) {
+                _pageController.animateTo(
+                  0.0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeOut,
+                );
+              }
+              break;
+            case 2:
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/friends');
+              break;
+          }
+        },
       ),
     );
   }

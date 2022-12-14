@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:todo_app/screens/user_profile.dart';
 import 'screens/friends_page.dart';
+import 'customColor.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,11 +37,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const AuthWrapper(),
-        '/profile': (context) => const UserProfile(),
-        '/friends': (context) => const Friends(),
+        '/profile': (context) => UserProfile(),
+        '/friends': (context) => Friends(),
       },
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: customColor.kToDark,
       ),
     );
   }

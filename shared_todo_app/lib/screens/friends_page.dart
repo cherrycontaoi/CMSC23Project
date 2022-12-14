@@ -3,7 +3,10 @@ import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
 class Friends extends StatelessWidget {
-  const Friends({super.key});
+  Friends({super.key});
+
+  int _selectedIndex = 2;
+  final ScrollController _pageController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +56,36 @@ class Friends extends StatelessWidget {
         title: const Text('Friends'),
       ),
       body: Column(children: [Text("\nThis is the Friends page")]),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.group), label: "Friends"),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/profile');
+              break;
+            case 1:
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/');
+              break;
+            case 2:
+              //only scroll to top when current index is selected
+              if (_selectedIndex == index) {
+                _pageController.animateTo(
+                  0.0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeOut,
+                );
+              }
+              break;
+          }
+        },
+      ),
     );
   }
 }

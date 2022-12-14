@@ -16,11 +16,15 @@ class FirebaseAuthAPI {
     String? this.errorType,
   });
 
-  void saveUserToFirestore(
-      String? uid, String username, String firstName, String lastName) async {
+  void saveUserToFirestore(String? uid, String username, String name,
+      String birthday, String location) async {
     try {
-      await db.collection("users").doc(uid).set(
-          {"username": username, "firstName": firstName, "lastName": lastName});
+      await db.collection("users").doc(uid).set({
+        "username": username,
+        "Name": name,
+        "Birthday": birthday,
+        "Location": location
+      });
     } on FirebaseException catch (e) {
       print(e.message);
     }
@@ -40,17 +44,22 @@ class FirebaseAuthAPI {
     }
   }
 
-  void signUp(String username, String password, String firstName,
-      String lastName) async {
+  void signUp(String username, String password, String name, String birthday,
+      String location) async {
     UserCredential credential;
+
     try {
       credential = await auth.createUserWithEmailAndPassword(
         email: username,
         password: password,
       );
+
       if (credential.user != null) {
         saveUserToFirestore(
-            credential.user?.uid, username, firstName, lastName);
+            credential.user?.uid, username, name, birthday, location);
+        //sets the displayName of the user based on the user input
+        User currentUser = auth.currentUser!;
+        currentUser.updateDisplayName(name);
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

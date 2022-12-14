@@ -13,8 +13,9 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     TextEditingController passwordController = TextEditingController();
     TextEditingController usernameController = TextEditingController();
-    TextEditingController firstNameController = TextEditingController();
-    TextEditingController lastNameController = TextEditingController();
+    TextEditingController displayNameController = TextEditingController();
+    TextEditingController birthdayController = TextEditingController();
+    TextEditingController locationController = TextEditingController();
 
     final username = TextFormField(
       controller: usernameController,
@@ -31,17 +32,24 @@ class _SignupPageState extends State<SignupPage> {
       ),
     );
 
-    final firstName = TextFormField(
-      controller: firstNameController,
+    final displayName = TextFormField(
+      controller: displayNameController,
       decoration: const InputDecoration(
-        hintText: "First Name",
+        hintText: "Name",
       ),
     );
 
-    final lastName = TextFormField(
-      controller: lastNameController,
+    final birthday = TextFormField(
+      controller: birthdayController,
       decoration: const InputDecoration(
-        hintText: "Last Name",
+        hintText: "Birthday (Month Day, Year)",
+      ),
+    );
+
+    final location = TextFormField(
+      controller: locationController,
+      decoration: const InputDecoration(
+        hintText: "Location",
       ),
     );
 
@@ -51,10 +59,12 @@ class _SignupPageState extends State<SignupPage> {
         onPressed: () {
           //call the auth provider here
           context.read<AuthProvider>().signUp(
-              usernameController.text,
-              passwordController.text,
-              firstNameController.text,
-              lastNameController.text);
+                usernameController.text,
+                passwordController.text,
+                displayNameController.text,
+                birthdayController.text,
+                locationController.text,
+              );
           Navigator.pop(context);
         },
         child: const Text('Sign up', style: TextStyle(color: Colors.white)),
@@ -90,8 +100,9 @@ class _SignupPageState extends State<SignupPage> {
             ),
             username,
             password,
-            firstName,
-            lastName,
+            displayName,
+            birthday,
+            location,
             SignupButton,
             backButton
           ],
